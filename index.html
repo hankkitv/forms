@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All‑You‑Can‑Eat Shorts Submission</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&family=Fredoka:wght@600&family=Quicksand:wght@500;700&display=swap');
+
+      body {
+        font-family: "Quicksand", "Roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #23272a 0%, #181a1b 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        min-height: 100vh;
+        color: #f3f6f9;
+      }
+      .container {
+        background: rgba(35, 39, 42, 0.98);
+        padding: 36px 44px 32px 44px;
+        border-radius: 22px 22px 32px 32px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65), 0 2px 0 #fff inset; /* changed orange to white */
+        max-width: 520px;
+        width: 100%;
+        border: 3px solid #888; /* changed from #3399ff to gray */
+        transition: box-shadow 0.3s, border-color 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+      .container:hover {
+        box-shadow: 0 12px 48px 0 rgba(255,255,255,0.18), 0 2px 0 #fff inset; /* changed to white */
+        border-color: #fff; /* changed from #ffb347 to white */
+      }
+      .container::before {
+        content: "";
+        position: absolute;
+        top: -60px;
+        right: -60px;
+        width: 120px;
+        height: 120px;
+        background: radial-gradient(circle, #3399ff55 60%, transparent 100%);
+        z-index: 0;
+        pointer-events: none;
+      }
+      .container::after {
+        content: "";
+        position: absolute;
+        bottom: -40px;
+        left: -40px;
+        width: 80px;
+        height: 80px;
+        background: radial-gradient(circle, #ffb34744 60%, transparent 100%);
+        z-index: 0;
+        pointer-events: none;
+      }
+      h1 {
+        font-family: "Fredoka", "Montserrat", "Quicksand", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 2.2rem;
+        color: #fff; /* changed from #ffb347 (orange) to white */
+        margin-bottom: 22px;
+        letter-spacing: 1.5px;
+        font-weight: 700;
+        text-shadow: 0 2px 12px rgba(255,255,255,0.13); /* changed to white */
+        text-align: center;
+        line-height: 1.1;
+        position: relative;
+        z-index: 1;
+      }
+      label {
+        font-family: "Montserrat", "Quicksand", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 600;
+        display: block;
+        margin: 18px 0 6px;
+        color: #e0e0e0;
+        letter-spacing: 0.5px;
+        font-size: 1.08em;
+        position: relative;
+        z-index: 1;
+      }
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        font-family: "Quicksand", "Roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        width: 100%;
+        padding: 13px 14px;
+        font-size: 16px;
+        border: 2px solid #888; /* changed from #3399ff to gray */
+        border-radius: 12px;
+        box-sizing: border-box;
+        background: #181a1b;
+        color: #f3f6f9;
+        margin-bottom: 2px;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        outline: none;
+        position: relative;
+        z-index: 1;
+      }
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      textarea:focus {
+        border-color: #fff; /* changed from #ffb347 to white */
+        background: #23272a;
+        box-shadow: 0 0 0 2px #ffffff44;
+      }
+      textarea {
+        resize: vertical;
+        min-height: 80px;
+      }
+      .checkbox-group {
+        margin-top: 15px;
+        padding: 10px 0 0 0;
+        position: relative;
+        z-index: 1;
+      }
+      .checkbox-group label {
+        font-family: "Quicksand", "Roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 600;
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 10px;
+        color: #ffd580;
+        font-size: 15px;
+        gap: 10px;
+        cursor: pointer;
+        transition: color 0.2s;
+        border-radius: 8px;
+        padding: 6px 8px 6px 0;
+        user-select: none;
+      }
+      .checkbox-group label:hover {
+        color: #fffbe7;
+        background: #3399ff22;
+      }
+      .checkbox-group input {
+        margin-top: 2px;
+        margin-right: 10px;
+        transform: scale(1.18);
+        accent-color: #ffb347;
+        cursor: pointer;
+      }
+      button[type="submit"] {
+        font-family: "Fredoka", "Montserrat", "Quicksand", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin-top: 28px;
+        width: 100%;
+        padding: 15px;
+        background: #23272a; /* changed from gradient to match other buttons */
+        color: #fff;         /* changed from #23272a to white */
+        border: 2px solid #888;
+        border-radius: 12px;
+        font-size: 1.15rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.2s, box-shadow 0.2s, color 0.2s, transform 0.1s, border-color 0.2s;
+        letter-spacing: 1px;
+        box-shadow: 0 2px 12px rgba(255,179,71,0.10);
+        margin-bottom: 0;
+        position: relative;
+        z-index: 1;
+      }
+      button[type="submit"]:hover {
+        background: #fff;    /* match hover of other buttons */
+        color: #23272a;      /* match hover of other buttons */
+        box-shadow: 0 4px 24px rgba(51,153,255,0.18);
+        transform: translateY(-2px) scale(1.03);
+        border-color: #fff;
+      }
+      /* Playful style for autofill/clear buttons */
+      .container > div[style] button {
+        font-family: "Fredoka", "Montserrat", "Quicksand", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #23272a;
+        color: #fff; /* changed from #ffb347 to white */
+        border: 2px solid #888; /* changed from #ffb347 to gray */
+        border-radius: 10px;
+        padding: 10px 18px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.1s;
+        box-shadow: 0 1px 6px rgba(255,179,71,0.08);
+        margin-top: 0;
+        margin-bottom: 0;
+        position: relative;
+        z-index: 1;
+      }
+      .container > div[style] button:hover {
+        background: #fff;
+        color: #23272a;
+        border-color: #fff; /* border turns white on hover */
+        transform: scale(1.06) rotate(-2deg);
+      }
+      /* Responsive tweaks */
+      @media (max-width: 600px) {
+        .container {
+          padding: 18px 6vw 18px 6vw;
+          border-radius: 16px 16px 24px 24px;
+        }
+        h1 {
+          font-size: 1.3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>All‑You‑Can‑Eat Shorts Submission</h1>
+
+      <form
+        id="submission-form"
+        action="https://docs.google.com/forms/d/e/1FAIpQLScBN1KwxkJH1C-4_0I7gJHOJ1NLMm0BdG9zSVYk5k4R8UmdrA/formResponse"
+        method="POST"
+        target="hidden_iframe"
+        onsubmit="return handleSubmit();"
+      >
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="entry.563355074" required />
+
+        <label for="contact">ContactInfo *</label>
+        <input type="text" id="contact" name="entry.1142261856" required />
+        
+        <label for="spot1">Spot #1 *</label>
+        <input type="text" id="spot1" name="entry.1710917279" required />
+
+        <label for="spot2">Spot #2</label>
+        <input type="text" id="spot2" name="entry.1625847688" />
+
+        <label for="spot3">Spot #3</label>
+        <input type="text" id="spot3" name="entry.822237124" />
+
+        <div class="checkbox-group">
+          <label>
+            <input
+              type="checkbox"
+              name="entry.562134425"
+              value="I understand that submitted videos need to be recorded in 4K(UHD)"
+              required
+            />
+            I understand that submitted videos need to be recorded in 4K (UHD)
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="entry.562134425"
+              value="I understand that I can only submit content that I own copyright"
+            />
+            I understand that I can only submit content that I own copyright
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="entry.562134425"
+              value="I understand that by submitting, I allow HankkiTV the right to edit, distribute, and generate income from the content."
+            />
+            I understand that by submitting, I allow HankkiTV the right to edit,
+            distribute, and generate income from the content.
+          </label>
+        </div>
+
+        <button type="submit">Submit</button>
+        <div class="success-message" id="success-message">
+          ✅ Thank you! Your response has been recorded.
+        </div>
+      </form>
+
+      <div style="display: flex; gap: 10px; margin-top: 20px">
+        <button type="button" onclick="autoFill()">Auto-fill</button>
+        <button type="button" onclick="clearForm()">Clear</button>
+      </div>
+      <!-- Prevents redirect after form submit -->
+      <iframe name="hidden_iframe" style="display: none"></iframe>
+    </div>
+
+    <script>
+      function handleSubmit() {
+        // Brief delay to simulate submission success
+        setTimeout(() => {
+          document.getElementById("submission-form").reset();
+          document.getElementById("success-message").style.display = "block";
+        }, 1000);
+        return true;
+      }
+
+      function autoFill() {
+        document.getElementById("name").value = "John Doe";
+        document.getElementById("contact").value = "000-0000-0000";
+        document.getElementById("spot1").value = "Central Park, New York";
+        document.getElementById("spot2").value = "Eiffel Tower, Paris";
+        document.getElementById("spot3").value = "Shibuya Crossing, Tokyo";
+
+        // Check all terms checkboxes
+        document
+          .querySelectorAll("input[name='entry.562134425']")
+          .forEach((cb) => (cb.checked = true));
+      }
+
+      function clearForm() {
+        document.getElementById("submission-form").reset();
+        document.getElementById("success-message").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
